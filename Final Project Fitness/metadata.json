@@ -1,0 +1,7 @@
+{
+  "name": "Project Fitness",
+  "description": "Premium online fitness coaching platform with AI assistance.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
