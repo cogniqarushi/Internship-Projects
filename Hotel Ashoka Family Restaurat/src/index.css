@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  
+  /* Elegant Minimal Theme based on #f8f8f4 and #1a3a2a */
+  --color-brand-orange: #c89f5d; /* Primary Accent: Muted Gold */
+  --color-brand-yellow: #e07a5f; /* Secondary: Soft Terracotta */
+  --color-brand-cream: #f8f8f4; /* Background: Off-white */
+  --color-brand-dark: #1a3a2a; /* Text & Footer: Deep Green */
+  --color-brand-olive: #234b38; /* Dark Cards: Forest Green */
+  --color-brand-light-olive: #ffffff; /* Light Cards: Pure White */
+}
+
+body {
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-dark);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes subtle-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Hotel Ashoka Family Restaurant",
+  "description": "Pure vegetarian family restaurant in Tuljapur, Maharashtra. Serving authentic Indian cuisine near Tulja Bhavani Temple.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
