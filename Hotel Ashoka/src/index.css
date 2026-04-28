@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Cormorant Garamond", ui-serif, Georgia, serif;
+  
+  /* Luxury Vegetarian Theme */
+  --color-brand-orange: #c9a34e; /* Accent Gold */
+  --color-brand-yellow: #c9a34e; /* Accent Gold */
+  --color-brand-cream: #f2eee3; /* Slightly darker, more antique cream */
+  --color-brand-dark: #1a3324; /* Original dark green */
+  --color-brand-olive: #1f3d2b; /* Original forest green */
+  --color-brand-light-olive: #f2eee3; /* Matching antique cream */
+}
+
+body {
+  background-color: #f2eee3;
+  color: var(--color-brand-dark);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes subtle-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.glowing-text {
+  background: linear-gradient(
+    to right, 
+    #c19b6c 0%, 
+    var(--color-brand-yellow) 20%, 
+    var(--color-brand-cream) 50%, 
+    var(--color-brand-yellow) 80%, 
+    #c19b6c 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.glowing-text:hover {
+  transform: scale(1.02);
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, var(--color-brand-yellow) 0%, #c19b6c 50%, #a88454 100%);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, var(--color-brand-yellow) 0%, #c19b6c 50%, #a88454 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ornamental-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.ornamental-divider::before,
+.ornamental-divider::after {
+  content: "";
+  height: 2px;
+  background-color: var(--color-brand-dark);
+  flex-grow: 1;
+  max-width: 100px;
+}
+
+.ornamental-divider::before {
+  margin-right: 1rem;
+}
+
+.ornamental-divider::after {
+  margin-left: 1rem;
+}
+
+.ornamental-icon {
+  color: var(--color-brand-yellow);
+  font-size: 1.5rem;
+}
+
+.premium-card {
+  background-color: var(--color-brand-cream);
+  border: 1px solid rgba(193, 155, 108, 0.3);
+  border-radius: 8px;
+}
+
