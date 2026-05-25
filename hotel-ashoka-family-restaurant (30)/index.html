@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1oyU_50Ji7-vqhHhIZMyojkPPXQR2CwuT" />
+    <link rel="shortcut icon" type="image/png" href="https://lh3.googleusercontent.com/d/1oyU_50Ji7-vqhHhIZMyojkPPXQR2CwuT" />
+    <script>
+      (function() {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = function() {
+          const canvas = document.createElement('canvas');
+          canvas.width = 64;
+          canvas.height = 64;
+          const ctx = canvas.getContext('2d');
+          
+          ctx.beginPath();
+          ctx.arc(32, 32, 32, 0, Math.PI * 2, true);
+          ctx.closePath();
+          ctx.clip();
+          
+          const zoom = 1.45;
+          const imgMinDim = Math.min(img.width, img.height);
+          const cropSize = Math.floor(imgMinDim / zoom);
+          const left = Math.floor((img.width - cropSize) / 2);
+          const top = Math.floor((img.height - cropSize) / 2);
+          
+          ctx.drawImage(img, left, top, cropSize, cropSize, 0, 0, 64, 64);
+          
+          const links = document.querySelectorAll("link[rel~='icon']");
+          links.forEach(link => {
+            link.href = canvas.toDataURL('image/png');
+          });
+        };
+        img.src = "https://lh3.googleusercontent.com/d/1oyU_50Ji7-vqhHhIZMyojkPPXQR2CwuT";
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1200&auto=format&fit=crop" />
+    <title>Hotel Ashoka</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
