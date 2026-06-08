@@ -1,0 +1,1 @@
+fetch('http://localhost:3000/api/chat', {method: 'POST', body: JSON.stringify({history:[], message:'hi'}), headers: {'Content-Type': 'application/json'}}).then(r=> { console.log(r.status); return r.text()}).then(t=>console.log(t.substring(0,200)))
