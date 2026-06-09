@@ -1,0 +1,1 @@
+fetch('https://ais-pre-j3g5k2o5lp6tigjqatbckb-20339417581.asia-east1.run.app/api/chat', {method: 'POST', body: JSON.stringify({history:[], message:'hi'}), headers: {'Content-Type': 'application/json'}}).then(r=>r.text()).then(t=>console.log(t.substring(0,200)))
